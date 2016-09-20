@@ -1,7 +1,7 @@
 <div id="logonDiv">
-  <label>Username : <input id="username" placeholder="username" value="LindseyLow" /></label>
+  <label>Username : <input ng-model="username" type="text"/></label>  
    <br/>
-  <label>Password : <input id="password" placeholder="password" value="none" /></label>
+  <label>Password : <input ng-model="password" type="text"/></label>
   <br/>
-  <a href="#ShowFeeds/1">Login</a>  
+  <a href="#ShowFeeds/{{username}}">Login</a>  
  </div> 

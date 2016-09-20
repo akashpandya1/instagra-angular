@@ -5,7 +5,8 @@ app.config(['$routeProvider',
   function($routeProvider) {
      $routeProvider
      .when('/', {
-            templateUrl: 'static/logon.html'           
+            templateUrl: 'static/logon.html',
+            controller: 'logonCtrl'          
           })
      .when('/ShowFeeds/:userId', {
             templateUrl: 'static/showFeeds.html',
@@ -15,6 +16,12 @@ app.config(['$routeProvider',
             redirectTo: '/'
           });
 }]);
+ 
+app.controller('logonCtrl', function logonCtrl($scope, $http, $routeParams) {   
+        console.log("inside logonCtrl:" );     
+        $scope.username = '1';  
+        $scope.password = '1';   
+}); 
  
  
 
