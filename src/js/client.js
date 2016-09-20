@@ -1,7 +1,17 @@
-import React from "react";
-import ReactDOM from "react-dom";
+  
+var app = angular.module('instaApp', []);
+  
+app.controller('instaCtrl', function instaCtrl($scope, $http) { 
+        console.log("inside instaCtrl");  
+        $http({
+                method: 'GET',                
+                url: 'http://localhost:8080/getFollowerPosts/1/'
+            }).then(function successCallback(response) {
+                console.log(response.data);
+                $scope.followerPosts = response.data;                  
+            }, function errorCallback(response) {
+                console.log(response);
+            });       
+}); 
 
-import Layout from "./components/Layout";
-
-const app = document.getElementById('app');
-ReactDOM.render(<Layout/>, app);
+ 

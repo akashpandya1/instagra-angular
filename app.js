@@ -2,7 +2,6 @@ express = require('express');
 app = express();
 sqlite3 = require('sqlite3').verbose();
 db = new sqlite3.Database('./InstaDB.sqlite');
-fs = require('fs'); 
 dbselectHomeFeed = require('./db.js').selectHomeFeed;  
 dbauthenticateUser = require('./db.js').AuthenticateUser;
 dbAddToPostsTable = require('./db.js').dbAddToPostsTable;
@@ -16,12 +15,12 @@ app.use(
     })
 ); 
  
- 
-app.listen(3000, function () {
-    console.log('Example app listening on port 3000!');
-});
-
 app.use('/static',express.static(__dirname +'/src'));
+ 
+app.get('/', function (req, res) {
+    res.sendFile(__dirname + '/src/index.html');
+
+});  
 
 app.get('/AuthUser/:username/:password', function (req, res) {
    console.log("AuthUser: Username " + req.params.username + ", Password " + req.params.password);
@@ -233,4 +232,6 @@ app.post('/selectRecForTweet', function (req, res) {
 
 */
 
- 
+ app.listen(8080, function () {
+    console.log('Example app listening on port 8080!');
+});
