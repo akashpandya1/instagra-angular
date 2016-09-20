@@ -17,8 +17,14 @@ app.use(
  
 app.use('/static',express.static(__dirname +'/src'));
  
+<<<<<<< HEAD
 app.get('/', function (req, res) {
     res.sendFile(__dirname + '/src/index.html');
+=======
+app.listen(8080, function () {
+    console.log('Example app listening on port 3000!');
+});
+>>>>>>> origin/master
 
 });  
 
