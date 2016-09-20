@@ -23,64 +23,8 @@
 </head>
 
  
-<body ng-app="instaApp" ng-controller="instaCtrl">
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-         <span class="sr-only">Toggle navigation</span>
-         <span class="icon-bar"></span>
-         <span class="icon-bar"></span>
-         <span class="icon-bar"></span>
-       </button>
-        <a class="navbar-brand" href="#">InstaSham!!</a>
-      </div>
-
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-        </ul>        
-        <form class="navbar-form navbar-left" role="search">
-         <div class="form-group">
-            <input type="text" class="form-control" placeholder="Search" >
-          </div>
-          <button type="submit" class="btn btn-default">Submit</button>
-        </form>
-      </div>
-    </div>
-  </nav>
-
-  <div class="jumbotron vertical-center">
-    <div class="container">
-      <header class="page-header">
-        <h3>Home Feeds:</h3>
-      </header>    
-     
-        <div ng-repeat="followerPost in followerPosts">
-          <div>
-            <section>
-              <header >               
-               <p ><strong>Time:</strong> <em> {{followerPost.PostTime}}</em>&nbsp;&nbsp;<strong>Comment:</strong> <em> {{followerPost.Text}} </em></p>             
-              </header>
-             </section>  
-            </div>
-             <div >
-               <section>               
-                <aside>
-                  <img ng-src="static/public/graphics/{{followerPost.PostPic}}"> 
-                  <br/>
-                  <p ><strong>Posted By:</strong><b> {{followerPost.Name}} </b></p >
-                  <hr/>                 
-                </aside>    
-              </section>
-             </div>
-        </div>
-  <!--
-         <pre>{{ {followerPosts} | json }}</pre>    -->
-      
-
-    </div> 
-  </div>
-
+<body ng-app="instaApp">
+  <div ng-view></div>
 </body>
 </html>
  
