@@ -17,16 +17,9 @@ app.use(
  
 app.use('/static',express.static(__dirname +'/src'));
  
-<<<<<<< HEAD
 app.get('/', function (req, res) {
     res.sendFile(__dirname + '/src/index.html');
-=======
-app.listen(8080, function () {
-    console.log('Example app listening on port 3000!');
-});
->>>>>>> origin/master
-
-});  
+ });  
 
 app.get('/AuthUser/:username/:password', function (req, res) {
    console.log("AuthUser: Username " + req.params.username + ", Password " + req.params.password);
